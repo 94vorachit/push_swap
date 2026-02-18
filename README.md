@@ -26,6 +26,7 @@ The possible actions are:
 https://github.com/arommers/push_swap/tree/master
 https://github.com/mcombeau/push_swap/tree/main
 https://www.youtube.com/watch?v=4dMsuxfqufg
+https://42-cursus.gitbook.io/guide
 
 
 **Additional**
