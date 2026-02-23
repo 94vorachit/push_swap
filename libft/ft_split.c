@@ -6,11 +6,25 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 13:34:39 by vorhansa          #+#    #+#             */
-/*   Updated: 2025/09/09 14:29:47 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:51:41 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**ft_free(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (NULL);
+}
 
 static int	ft_count_words(char const *s, char c)
 {
@@ -33,64 +47,38 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_make_words(char *word, char const *s, int j, int word_ln)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
+	char	**res;
+	char	*wordstart;
+	int		i;
 
+	res = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!res)
+		return (NULL);
 	i = 0;
-	while (word_ln > 0)
-		word[i++] = s[j - word_ln--];
-	word[i] = '\0';
-	return (word);
-}
-
-static char	**ft_split_words(char **res, char const *s, char c, int word_cnt)
-{
-	int	i;
-	int	j;
-	int	word_ln;
-
-	i = 0;
-	j = 0;
-	word_ln = 0;
-	while (s[j] && i < word_cnt)
+	while (*s)
 	{
-		while (s[j] && s[j] == c)
-			j++;
-		while (s[j] && s[j] != c)
+		if (*s != c)
 		{
-			j++;
-			word_ln++;
+			wordstart = (char *)s;
+			while (*s != c && *s)
+				s++;
+			res[i] = ft_substr(wordstart, 0, s - wordstart);
+			if (!res[i])
+				return (ft_free(res));
+			i++;
 		}
-		res[i] = (char *)malloc(sizeof(char) * (word_ln + 1));
-		if (!res[i])
-			return (NULL);
-		ft_make_words(res[i], s, j, word_ln);
-		word_ln = 0;
-		i++;
+		else
+			s++;
 	}
 	res[i] = NULL;
 	return (res);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	int		word_cnt;
-	char	**res;
-
-	if (s == NULL)
-		return (NULL);
-	word_cnt = ft_count_words(s, c);
-	res = (char **)malloc(sizeof(char *) * (word_cnt + 1));
-	if (!res)
-		return (NULL);
-	ft_split_words(res, s, c, word_cnt);
-	return (res);
-}
-
 // int	main(void)
 // {
-// 	char	s1[] = "Words.to.be.splitted.in.six";
+// 	char	s1[] = "Words .to  .be   .splitted    .in     .six      ";
 // 	char	s2;
 // 	char	**words;
 // 	int		i;
@@ -101,7 +89,7 @@ char	**ft_split(char const *s, char c)
 // 	printf("Before: [%s]\nSplitter: [%c]\nAfter: \n", s1, s2);
 // 	while (words[i])
 // 	{
-// 		printf("words[%d] : %s\n", i, words[i]);
+// 		printf("words[%d] : [%s]\n", i, words[i]);
 // 		free(words[i]);
 // 		i++;
 // 	}
