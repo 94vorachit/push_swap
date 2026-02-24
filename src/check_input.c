@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:13 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/02/23 18:58:37 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:50:04 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,26 @@ int	check_nbr(char *av)
 
 void	check_input(int ac, char **av)
 {
-	char	**
+	int		i;
+	long	temp_av;
+	char	**temp;
+
+	i = 0;
+	if (ac == 2)
+		temp = ft_split(av[1], ' ');
+	else
+		temp = av + 1;
+	while (temp[i])
+	{
+		temp_av = ft_atoi(temp[i]);
+		if (temp_av < INT_MIN || temp_av > INT_MAX)
+			ft_putstr("ERROR MIN MAX");
+		if (check_unique(temp))
+			ft_putstr("ERROR UNIQUE");
+		if (!check_nbr(temp[i]))
+			ft_putstr("ERROR NUMBER");
+		i++;
+	}
+	if (ac == 2)
+		ft_free (temp);
 }

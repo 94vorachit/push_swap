@@ -6,39 +6,40 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/02/16 18:50:02 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/02/24 18:24:14 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 NAME	= push_swap
-
-SRC_PATH	= src/
-OBJ_PATH	= obj/
-
-SRC			=
-SRCS		= $(addprefix $(SRC_PATH), $(SRC))
-OBJ			= $(SRC:.c=.o)
-OBJS		= $(addprefix $(OBJ_PATH), $(OBJ))
-INCS		= -I ./include/
+INCS		= -I./include
 LIBFT 		= ./libft/libft.a
 
-all: $(OBJ_PATH) $(NAME)
+SRC_DIR =	src
+SRC		=	check_input.c	\
+			main.c	\
+# SRCS	=	$(addprefix $(SRC_DIR)/, $(SRC))
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@mkdir -p $(OBJ_PATH)
+OBJ_DIR	=	obj
+OBJ		=	$(SRC:.c=.o)
+OBJS 	= 	$(addprefix $(OBJ_DIR)/, $(OBJ))
+
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(OBJS) 
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCS) -c -o $@ $^
-
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 $(LIBFT):
 	@$(MAKE) -C ./libft
 
 clean:
 	@$(MAKE) clean -C ./libft
-	@rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@$(MAKE) fclean -C ./libft
@@ -46,6 +47,7 @@ fclean: clean
 
 re: fclean all
 
+.PHONY: all clean fclean re
 
 # all: $(OBJ_PATH) $(NAME) 
 

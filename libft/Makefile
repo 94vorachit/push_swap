@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/09 18:00:13 by vorhansa          #+#    #+#              #
-#    Updated: 2025/09/15 16:45:24 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/02/24 17:57:32 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 
-MAN_SRCS	= ft_atoi.c \
+SRC	= ft_atoi.c \
 	ft_bzero.c \
 	ft_calloc.c \
 	ft_isalnum.c \
@@ -50,12 +50,13 @@ MAN_SRCS	= ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c \
 
-BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
-			ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
-	
-MAN_OBJS	= $(MAN_SRCS:%.c=%.o)
+# BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+# 			ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
-BONUS_OBJS	= $(BONUS_SRCS:%.c=%.o)
+OBJ_DIR = obj
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+
+# BONUS_OBJS	= $(BONUS_SRCS:%.c=%.o)
 
 all:	$(NAME)
 
@@ -63,14 +64,20 @@ all:	$(NAME)
 # 	* -r ~"read" adds or modifies an already created file
 # 	* -c ~suppress air message in terminal
 #	* -s ~"refresh explorer"
-$(NAME):	$(MAN_OBJS)
-	ar -rcs $(NAME) $(MAN_OBJS)
+$(NAME): $(OBJ)
+	@ar -rcs $@ $^
 
-bonus:	$(BONUS_OBJS)
-	ar -rcs $(NAME) $(BONUS_OBJS)
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+
+# bonus:	$(BONUS_OBJS)
+# 	ar -rcs $(NAME) $(BONUS_OBJS)
 
 clean:
-	rm -rf $(MAN_OBJS) $(BONUS_OBJS) 
+	@rm -rf $(OBJ_DIR)
+	@rm -f $(OBJ)
+# 	$(BONUS_OBJS) 
 
 fclean: clean
 	rm -f $(NAME)

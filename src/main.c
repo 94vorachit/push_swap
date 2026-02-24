@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:32:49 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/02/16 17:47:04 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:04:20 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	main(int ac, char  **av)
 {
-	t_stack	*stack_a;
-	t_stack *stack_b;
+	//t_stack	*stack_a;
+	// t_stack *stack_b;
 
 	if (ac < 2)
 		return (0);
-	stack_b = NULL;
+	check_input(ac, av);
+	// stack_b = NULL;
 	return (0);
 }
