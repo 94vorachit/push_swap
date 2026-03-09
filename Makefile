@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/03/09 16:31:42 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/09 17:11:32 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC		=	check_input.c	\
 			r_rotate.c \
 			index.c \
 			sort.c \
-			sort_util.c	\
+			radix.c \
 			
 # SRCS	=	$(addprefix $(SRC_DIR)/, $(SRC))
 
@@ -56,15 +56,19 @@ fclean: clean
 
 re: fclean all
 
-size ?= 3
+# number of arg
+size ?= $(shell read -p "Enter size: " size_input && echo $$size_input)
 
-CHECKER = valgrind ./push_swap $(ARG) | ./checker_linux $(ARG)
+#CHECKER = valgrind ./push_swap $(ARG) | ./checker_linux $(ARG)
+CHECKER = ./push_swap $(ARG) | ./checker_linux $(ARG)
 
 test:
+	@$(MAKE) all
 	@$(eval ARG = $(shell seq -1000 1000 | shuf -n $(size)))
 	@echo "Checker result: "
 	$(CHECKER)
 	@echo "Instructions count: "
 	@./push_swap $(ARG) | wc -l
+	@$(MAKE) fclean
 
 .PHONY: all clean fclean re test

@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/09 18:00:13 by vorhansa          #+#    #+#              #
-#    Updated: 2026/03/04 14:56:27 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/09 17:12:27 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	@echo "Compiled ✅ $(BOLD) $^ $(RESET)"
+#	@echo "Compiled ✅ $(BOLD) $^ $(RESET)"
 	@$(CC) $(CFLAGS) -c -o $@ $^
 
 # bonus:	$(BONUS_OBJS)
@@ -90,7 +90,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(BOLD)$(NAME) $(RESET) Cleansed ✅"
+#	@echo "$(BOLD)$(NAME) $(RESET) Cleansed ✅"
 
 re: fclean all
 

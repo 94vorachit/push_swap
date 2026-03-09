@@ -6,11 +6,27 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 16:13:35 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/09 16:16:50 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:09:46 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	find_biggest(t_stack *head)
+{
+	int		big;
+	t_stack	*tmp;
+
+	big = INT_MIN;
+	tmp = head;
+	while (tmp)
+	{
+		if (tmp->index > big)
+			big = tmp->index;
+		tmp = tmp->next;
+	}
+	return (big);
+}
 
 void	sort_three(t_stack **head)
 {
@@ -25,6 +41,25 @@ void	sort_three(t_stack **head)
 		swap_a(head);
 }
 
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
+
+	size = count_nodes(*stack_a);
+	while (size--)
+	{
+		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
+			push_b(stack_a, stack_b);
+		else
+			rotate_a(stack_a);
+	}
+	sort_three(stack_a);
+	push_a(stack_a, stack_b);
+	push_a(stack_a, stack_b);
+	if ((*stack_a)->index > (*stack_a)->next->index)
+		swap_a(stack_a);
+}
+
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -32,10 +67,10 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	size = count_nodes(*stack_a);
 	if (!sorted(stack_a) && size <= 3)
 		sort_three(stack_a);
-	// else if (!sorted(stack_a) && size <= 5)
-	// 	sort_five(stack_a, stack_b);
-	// else if (!sorted(stack_a))
-	// 	radix_sort(stack_a, stack_b);
+	else if (!sorted(stack_a) && size <= 5)
+		sort_five(stack_a, stack_b);
+	else if (!sorted(stack_a))
+		radix_sort(stack_a, stack_b);
 	else
 	{
 		free_stack(stack_a);

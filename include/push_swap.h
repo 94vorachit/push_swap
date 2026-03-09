@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:57:23 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/09 16:20:13 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/03/09 17:10:15 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,12 @@ void	free_stack(t_stack **head);
 int		sorted(t_stack **head);
 
 // sort
+int		find_biggest(t_stack *head);
 void	sort_three(t_stack **head);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
 void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
-// sort_util
-int		find_biggest(t_stack *head);
+// radix
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 # endif
