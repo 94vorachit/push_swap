@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/09 18:00:13 by vorhansa          #+#    #+#              #
-#    Updated: 2026/02/24 19:34:25 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/04 14:56:27 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,15 @@ SRC	= ft_atoi.c \
 	ft_strtrim.c \
 	ft_tolower.c \
 	ft_toupper.c \
-
+	ft_lstadd_back.c \
+	ft_lstadd_front.c \
+	ft_lstclear.c \
+	ft_lstdelone.c \
+	ft_lstiter.c \
+	ft_lstlast.c \
+	ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstsize.c \
 # BONUS_SRCS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 # 			ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 

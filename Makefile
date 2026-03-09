@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/02/24 18:24:14 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/05 15:40:46 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,13 @@ LIBFT 		= ./libft/libft.a
 SRC_DIR =	src
 SRC		=	check_input.c	\
 			main.c	\
+			initialize.c \
+			push.c	\
+			swap.c \
+			rotate.c \
+			r_rotate.c \
+			index.c \
+			
 # SRCS	=	$(addprefix $(SRC_DIR)/, $(SRC))
 
 OBJ_DIR	=	obj

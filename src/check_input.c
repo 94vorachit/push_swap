@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:13 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/02/24 18:50:04 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/03/04 23:44:38 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,21 @@ int	check_unique(char **av)
 int	check_nbr(char *av)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (av[i] == '-')
+	if (av[i] == '-' || av[i]  == '+')
 		i++;
+	if (av[i] == '0' && av[i + 1])
+	{
+		j = i;
+		while (av[j])
+		{
+			if (av[j] != '0')
+				return (0);
+			j++;
+		}
+	}
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
