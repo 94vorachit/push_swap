@@ -22,9 +22,17 @@ The possible actions are:
 * ```rrb``` (reverse rotate B): Shift all elements of stack b down by 1. The last element becomes the first one.
 * ```rrr``` : ```rra``` and ```rrb``` at the same time.
 
+• For maximum project validation (100%) and eligibility for bonuses, you must:
+    ◦ Sort 100 random numbers in fewer than 700 operations. 'mcom'
+    ◦ Sort 500 random numbers in no more than 5500 operations.
+• For minimal project validation (which implies a minimum grade of 80%), you can succeed with different averages:
+    ◦ 100 numbers in under 1100 operations and 500 numbers in under 8500 operations '42Y'
+    ◦ 100 numbers in under 700 operations and 500 numbers in under 11500 operations
+    ◦ 100 numbers in under 1300 operations and 500 numbers in under 5500 operation
+
 **Resources**
-https://github.com/arommers/push_swap/tree/master
-https://github.com/mcombeau/push_swap/tree/main
+https://github.com/arommers/push_swap/tree/master 
+https://github.com/mcombeau/push_swap/tree/main 
 https://github.com/hu8813/push_swap/tree/main
 https://github.com/42YerevanProjects/push_swap/tree/master
 https://www.youtube.com/watch?v=4dMsuxfqufg

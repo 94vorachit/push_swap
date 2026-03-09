@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:39:33 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/05 16:09:22 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:19:56 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ void	free_stack(t_stack **head)
 		*head = (*head)->next;
 		free(tmp);
 	}
+}
+
+int	sorted(t_stack **head)
+{
+	t_stack	*tmp;
+
+	tmp = *head;
+	while (tmp && tmp->next)
+	{
+		if (tmp->index > tmp->next->index)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
 void	set_index(t_stack *head, int link_size)

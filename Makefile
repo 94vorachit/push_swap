@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/03/05 15:40:46 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/09 16:31:42 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRC		=	check_input.c	\
 			rotate.c \
 			r_rotate.c \
 			index.c \
+			sort.c \
+			sort_util.c	\
 			
 # SRCS	=	$(addprefix $(SRC_DIR)/, $(SRC))
 
@@ -54,26 +56,15 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+size ?= 3
 
-# all: $(OBJ_PATH) $(NAME) 
+CHECKER = valgrind ./push_swap $(ARG) | ./checker_linux $(ARG)
 
-# $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-# 	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
-# $(OBJ_PATH):
-# 	mkdir $(OBJ_PATH)
+test:
+	@$(eval ARG = $(shell seq -1000 1000 | shuf -n $(size)))
+	@echo "Checker result: "
+	$(CHECKER)
+	@echo "Instructions count: "
+	@./push_swap $(ARG) | wc -l
 
-# $(NAME): $(OBJS)
-# 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-
-# all: $(NAME) $(BONUS)
-
-# $(OBJ_DIR)/%.o: ./src/%.c
-# 	@mkdir -p $(OBJ_DIR)
-# 	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
-
-# $(NAME): $(LIBFT) $(OBJ) 
-# 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
-# $(LIBFT):
-# 	@$(MAKE) -C ./libft
+.PHONY: all clean fclean re test
