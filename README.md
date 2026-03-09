@@ -25,6 +25,8 @@ The possible actions are:
 **Resources**
 https://github.com/arommers/push_swap/tree/master
 https://github.com/mcombeau/push_swap/tree/main
+https://github.com/hu8813/push_swap/tree/main
+https://github.com/42YerevanProjects/push_swap/tree/master
 https://www.youtube.com/watch?v=4dMsuxfqufg
 https://42-cursus.gitbook.io/guide
 https://oyhoyhk.github.io/
