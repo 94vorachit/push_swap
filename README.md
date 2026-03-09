@@ -46,8 +46,3 @@ https://oyhoyhk.github.io/
 
 ## Additional
 
-$@: The filename representing the target.
-$%: The filename element of an archive member specification.
-$<: The filename of the first prerequisite.
-$?: The names of all prerequisites that are newer than the target, separated by spaces.
-$^: The filenames of all the prerequisites, separated by spaces. This list has duplicate filenames removed since for most uses, such as compiling, copying, etc., duplicates are not wanted.

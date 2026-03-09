@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/03/09 17:11:32 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/03/09 18:08:54 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,12 @@ $(NAME): $(LIBFT) $(OBJS)
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCS) -c -o $@ $^
+
+# $@: The filename representing the target.
+# $%: The filename element of an archive member specification.
+# $<: The filename of the first prerequisite.
+# $?: The names of all prerequisites that are newer than the target, separated by spaces.
+# $^: The filenames of all the prerequisites, separated by spaces. This list has duplicate filenames removed since for most uses, such as compiling, copying, etc., duplicates are not wanted.
 
 $(LIBFT):
 	@$(MAKE) -C ./libft
