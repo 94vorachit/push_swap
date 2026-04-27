@@ -1,10 +1,10 @@
-*This Project Has Been Created As Part Of The 42 Curriculum By Vorhansa*
+*This Project Has Been Created As Part Of The 42 Curriculum By **Vorhansa***
 
 ## Description
 
 Push Swap is a sorting algorithm implementation project and part of the Codam/school 42 core curriculum. The project tasks the students with writing a program in C that takes an unsorted list of integers as input and sorts them in ascending order using only two "stacks" and a limited set of operations. The aim of the project is to test the student's understanding of various sorting algorithms, their corresponding complexities and data structures, and the student's ability to implement this in code.
 
-**Push_Swap Rules and Grading**
+### Push_Swap Rules and Grading
 
 The program is only allowed two stacks to work with, stack A and stack B. All the numbers are initially added to stack A, and B is empty.
 
@@ -30,19 +30,33 @@ The possible actions are:
     * 100 numbers in under 700 operations and 500 numbers in under 11500 operations
     * 100 numbers in under 1300 operations and 500 numbers in under 5500 operation
 
+### Bonus
+
+The bonus part is to write a program named ```checker```, which will get as an argument the stack A formatted as a list of integers. Checker will then wait and read instructions on the standard input. Once all the instructions have been read, checker will execute them on the stack received as an argument (After giving the instructions press ```ctrl + d```).
+
+If after executing those instructions, stack a is actually sorted and b is empty, then checker must display ```"OK"``` else ```"KO"```. If checker arguments are invalid it displays ```"Error"```.
+
+The checker code can be found in the checker.c file in this repository.
+
 ## Instrctions
 
 
 
 ## Resources
-https://github.com/arommers/push_swap/tree/master 
-https://github.com/mcombeau/push_swap/tree/main 
-https://github.com/hu8813/push_swap/tree/main
-https://github.com/42YerevanProjects/push_swap/tree/master
-https://www.youtube.com/watch?v=4dMsuxfqufg
-https://42-cursus.gitbook.io/guide
-https://oyhoyhk.github.io/
+
+*   Radix sort:
+    
+    *   A tutorial on using radix sort with push_swap: [https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+    *   A video explanation of radix sort: [https://youtu.be/XiuSW_mEn7g](https://youtu.be/XiuSW_mEn7g)
+* Bitwise operators: https://www.programiz.com/c-programming/bitwise-operators
+* https://github.com/arommers/push_swap/tree/master
+* https://github.com/mcombeau/push_swap/tree/main 
+* https://github.com/hu8813/push_swap/tree/main
+* https://github.com/42YerevanProjects/push_swap/tree/master
+* https://www.youtube.com/watch?v=4dMsuxfqufg
+* https://oyhoyhk.github.io/
 
 
 ## Additional
 
+* LIBFT
