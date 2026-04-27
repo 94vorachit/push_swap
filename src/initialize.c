@@ -6,13 +6,13 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:22:27 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/05 15:44:45 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/04/27 18:42:50 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_stack *head)
+/*void	print_list(t_stack *head)
 {
 	t_stack	*current;
 	int	i;
@@ -25,7 +25,7 @@ void	print_list(t_stack *head)
 		current = current->next;
 		i++;
 	}
-}
+}*/
 
 t_stack	*ft_lstnew_int(int value)
 {

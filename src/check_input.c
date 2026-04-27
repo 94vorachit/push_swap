@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:13 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/09 18:19:07 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:39:04 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void	check_input(int ac, char **av)
 	{
 		temp_av = ft_atoi(temp[i]);
 		if (temp_av < INT_MIN || temp_av > INT_MAX)
-			ft_putstr("ERROR MIN MAX");
+			ft_putstr("ERROR");
 		if (check_unique(temp))
-			ft_putstr("ERROR UNIQUE");
+			ft_putstr("ERROR");
 		if (!check_nbr(temp[i]))
-			ft_putstr("ERROR NUMBER");
+			ft_putstr("ERROR");
 		i++;
 	}
 	if (ac == 2)

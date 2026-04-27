@@ -1,0 +1,70 @@
+int	main(int ac, char **av)
+{
+	t_stack	*stack_a;
+	t_stack *stack_b;
+
+	if (ac < 2)
+		return (0);
+	check_input(ac, av);
+	stack_a = init_list(ac, av);
+	stack_b = NULL;
+	set_index(stack_a, count_nodes(stack_a));
+	sort_stack(&stack_a, &stack_b);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// stack_b = NULL;
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+
+	// push_b(&stack_a, &stack_b);
+	// push_b(&stack_a, &stack_b);
+	// push_b(&stack_a, &stack_b);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+
+	// swap_a(&stack_a);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// swap_b(&stack_b);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+
+	// swap_ab(&stack_a, &stack_b);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+	
+	// rotate_a(&stack_a);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+
+	// rotate_b(&stack_b);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+	
+	// rotate_ab(&stack_a, &stack_b);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+
+	// r_rotate_a(&stack_a);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+
+	// r_rotate_b(&stack_b);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+	
+	// r_rotate_ab(&stack_a, &stack_b);
+	// printf("---------- stack a ----------\n");
+	// print_list(stack_a);
+	// printf("---------- stack b ----------\n");
+	// print_list(stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+	return (0);
+}

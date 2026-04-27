@@ -6,13 +6,13 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:32:49 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/09 16:22:12 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/04/27 17:24:42 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char  **av)
+int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
@@ -24,60 +24,6 @@ int	main(int ac, char  **av)
 	stack_b = NULL;
 	set_index(stack_a, count_nodes(stack_a));
 	sort_stack(&stack_a, &stack_b);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// stack_b = NULL;
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-
-	// push_b(&stack_a, &stack_b);
-	// push_b(&stack_a, &stack_b);
-	// push_b(&stack_a, &stack_b);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-
-	// swap_a(&stack_a);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// swap_b(&stack_b);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-
-	// swap_ab(&stack_a, &stack_b);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-	
-	// rotate_a(&stack_a);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-
-	// rotate_b(&stack_b);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-	
-	// rotate_ab(&stack_a, &stack_b);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-
-	// r_rotate_a(&stack_a);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-
-	// r_rotate_b(&stack_b);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
-	
-	// r_rotate_ab(&stack_a, &stack_b);
-	// printf("---------- stack a ----------\n");
-	// print_list(stack_a);
-	// printf("---------- stack b ----------\n");
-	// print_list(stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

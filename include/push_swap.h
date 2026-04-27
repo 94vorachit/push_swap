@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:57:23 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/09 17:10:15 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/04/27 18:03:39 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		check_nbr(char *av);
 void	check_input(int ac, char **av);
 
 // initialize
-void	print_list(t_stack *head);
+//void	print_list(t_stack *head);
 t_stack	*ft_lstnew_int(int value);
 void	insert_at_tail(t_stack **head, int new_value);
 t_stack	*init_list(int ac, char **av);
