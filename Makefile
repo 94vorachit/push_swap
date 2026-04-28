@@ -6,7 +6,7 @@
 #    By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 14:54:20 by vorhansa          #+#    #+#              #
-#    Updated: 2026/04/27 18:04:07 by vorhansa         ###   ########.fr        #
+#    Updated: 2026/04/29 06:08:54 by vorhansa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,8 +71,9 @@ CHECKER = ./push_swap $(ARG) | ./checker_linux $(ARG)
 test:
 	@$(MAKE) all
 	@$(eval ARG = $(shell seq -1000 1000 | shuf -n $(size)))
+	@echo "ARG: $(ARG)"
 	@echo "Checker result: "
-	$(CHECKER)
+	@$(CHECKER)
 	@echo "Instructions count: "
 	@./push_swap $(ARG) | wc -l
 	@$(MAKE) fclean
