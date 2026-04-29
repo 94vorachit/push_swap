@@ -265,6 +265,33 @@ a      b        a      b        a      b
 As you can see, the list is now completely sorted.
 
 
+```
+void	sort_stack(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
+
+	size = count_nodes(*stack_a);
+	if (!sorted(stack_a) && size <= 3)
+		sort_three(stack_a);
+	else if (!sorted(stack_a) && size <= 5)
+		sort_five(stack_a, stack_b);
+	else if (!sorted(stack_a))
+		radix_sort(stack_a, stack_b);
+	else
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+	}
+}
+```
+appropriate algorithm based on size:
+
+* 3 or fewer elements: Calls `sort_three()` — optimized for small stacks with minimal operations
+* 4-5 elements: Calls s`ort_five()` — uses stack_b as auxiliary and sorts via a targeted approach
+* More than 5 elements: Calls `radix_sort()` — efficient for larger inputs using the radix/bucket sort strategy
+
+
+
 # Resources
 
 *   Radix sort:
