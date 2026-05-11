@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 14:57:23 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/04/27 18:03:39 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/05/12 02:13:01 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <limits.h> //INT_MIN, INT_MAX
 # include "../libft/libft.h"
 
-typedef struct 		s_stack
+typedef struct s_stack
 {
 	int				value;
 	int				index;
 	struct s_stack	*next;
-} 					t_stack;
+}					t_stack;
 
 // check input
 int		check_unique(char **av);
@@ -74,5 +74,4 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 // radix
 void	radix_sort(t_stack **stack_a, t_stack **stack_b);
-
-# endif
+#endif

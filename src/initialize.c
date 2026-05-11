@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 15:22:27 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/04/27 18:42:50 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/05/12 02:10:31 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 	i = 0;
 	while (current)
 	{
-		printf("node[%d] : value = %d : index [%d]\n", i, current->value, current->index);
+		printf("node[%d] : value = %d : index [%d]\n", 
+		i, current->value, current->index);
 		current = current->next;
 		i++;
 	}

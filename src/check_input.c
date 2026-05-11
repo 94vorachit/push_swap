@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 16:47:13 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/04/27 17:39:04 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/05/12 02:10:10 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 		write(1, &str[i++], 1);
@@ -26,7 +26,7 @@ void	ft_putstr(char *str)
 int	count_arge(char **av)
 {
 	int	i;
-	
+
 	i = 0;
 	while (av[i])
 		i++;

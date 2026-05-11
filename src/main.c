@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 15:32:49 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/04/27 17:24:42 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/05/12 02:09:18 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 
 	if (ac < 2)
 		return (0);
