@@ -6,7 +6,7 @@
 /*   By: vorhansa <vorhansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 16:06:38 by vorhansa          #+#    #+#             */
-/*   Updated: 2026/03/04 16:22:42 by vorhansa         ###   ########.fr       */
+/*   Updated: 2026/05/15 00:55:37 by vorhansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,3 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
 }
-
-// int	main(int ac, char  **av)
-// {
-// 	t_stack	*stack_a;
-// 	t_stack *stack_b;
-
-// 	if (ac < 2)
-// 		return (0);
-// 	check_input(ac, av);
-// 	stack_a = init_list(ac, av);
-// 	printf("---------- stack a ----------\n");
-// 	print_list(stack_a);
-// 	stack_b = NULL;
-// 	printf("---------- stack b ----------\n");
-// 	print_list(stack_b);
-
-// 	push_b(&stack_a, &stack_b);
-// 	push_b(&stack_a, &stack_b);
-// 	printf("---------- stack a ----------\n");
-// 	print_list(stack_a);
-// 	printf("---------- stack b ----------\n");
-// 	print_list(stack_b);
-
-// 	return (0);
-// }

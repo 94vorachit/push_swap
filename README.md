@@ -285,11 +285,77 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 }
 ```
 appropriate algorithm based on size:
-
 * 3 or fewer elements: Calls `sort_three()` — optimized for small stacks with minimal operations.
-* 4-5 elements: Calls s`ort_five()` — uses stack_b as auxiliary and sorts via a targeted approach.
+* 4-5 elements: Calls `sort_five()` — uses stack_b as auxiliary and sorts via a targeted approach.
 * More than 5 elements: Calls `radix_sort()` — efficient for larger inputs using the radix/bucket sort strategy.
 
+#### `sort_three()`
+```
+void	sort_three(t_stack **head)
+{
+	int	biggest;
+
+	biggest = find_biggest(*head);
+	if ((*head)->index == biggest)
+		rotate_a(head);
+	else if ((*head)->next->index == biggest)
+		r_rotate_a(head);
+	if ((*head)->index > (*head)->next->index)
+		swap_a(head);
+}
+```
+#### `sort_five()`
+```
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	int	size;
+
+	size = count_nodes(*stack_a);
+	while (size--)
+	{
+		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
+			push_b(stack_a, stack_b);
+		else
+			rotate_a(stack_a);
+	}
+	sort_three(stack_a);
+	push_a(stack_a, stack_b);
+	push_a(stack_a, stack_b);
+	if ((*stack_a)->index > (*stack_a)->next->index)
+		swap_a(stack_a);
+}
+```
+#### `radix_sort()`
+```
+void	radix_sort(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*head_a;
+	int		i;
+	int		j;
+	int		size;
+	int		max_bits;
+
+	i = 0;
+	size = count_nodes(*stack_a);
+	max_bits = get_max_bits(*stack_a);	// finds how many bit positions are needed;
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			head_a = *stack_a;
+			if (((head_a->index >> i) & 1) == 1)
+				rotate_a(stack_a);	// If bit i of top node's index is 1 → rotate_a() (keep it in A, move to bottom).
+			else
+				push_b(stack_a, stack_b);	// Else → push_b() (move it to B).
+			j++;
+		}
+		while (*stack_b != NULL)
+			push_a(stack_a, stack_b);
+		i++;
+	}
+}
+```
 # `Resources`
 * Radix sort:
 	* A tutorial on using radix sort with push_swap: [https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
