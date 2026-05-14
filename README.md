@@ -23,12 +23,12 @@ The possible actions are:
 * `rrr` : `rra` and `rrb` at the same time.
 
 * For maximum project validation (100%) and eligibility for bonuses, you must:
-	* Sort 100 random numbers in fewer than 700 operations. 'mcom'
+	* Sort 100 random numbers in fewer than 700 operations.
 	* Sort 500 random numbers in no more than 5500 operations.
 * For minimal project validation (which implies a minimum grade of 80%), you can succeed with different averages:
-	* 100 numbers in under 1100 operations and 500 numbers in under 8500 operations '42Y'
-	* 100 numbers in under 700 operations and 500 numbers in under 11500 operations
-	* 100 numbers in under 1300 operations and 500 numbers in under 5500 operation
+	* 100 numbers in under 1100 operations and 500 numbers in under 8500 operations.
+	* 100 numbers in under 700 operations and 500 numbers in under 11500 operations.
+	* 100 numbers in under 1300 operations and 500 numbers in under 5500 operation.  
 
 ### Bonus
 
@@ -265,7 +265,7 @@ a      b        a      b        a      b
 As you can see, the list is now completely sorted.
 
 
-```
+```bash
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
@@ -286,26 +286,30 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 ```
 appropriate algorithm based on size:
 
-* 3 or fewer elements: Calls `sort_three()` — optimized for small stacks with minimal operations
-* 4-5 elements: Calls s`ort_five()` — uses stack_b as auxiliary and sorts via a targeted approach
-* More than 5 elements: Calls `radix_sort()` — efficient for larger inputs using the radix/bucket sort strategy
+* 3 or fewer elements: Calls `sort_three()` — optimized for small stacks with minimal operations.
+* 4-5 elements: Calls s`ort_five()` — uses stack_b as auxiliary and sorts via a targeted approach.
+* More than 5 elements: Calls `radix_sort()` — efficient for larger inputs using the radix/bucket sort strategy.
 
-
-
-# Resources
-
-*   Radix sort:
-	
-	*   A tutorial on using radix sort with push_swap: [https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
-	*   A video explanation of radix sort: [https://youtu.be/XiuSW_mEn7g](https://youtu.be/XiuSW_mEn7g)
-* Bitwise operators: https://www.programiz.com/c-programming/bitwise-operators
+# `Resources`
+* Radix sort:
+	* A tutorial on using radix sort with push_swap: [https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
+	* A video explanation of radix sort: [https://youtu.be/XiuSW_mEn7g](https://youtu.be/XiuSW_mEn7g)
+* [Bitwise operators](https://www.programiz.com/c-programming/bitwise-operators)
+* [Push Swap Tutorial](https://www.youtube.com/watch?v=4dMsuxfqufg)
+* [Push Swap Visualizer](https://oyhoyhk.github.io/)
 * https://github.com/arommers/push_swap/tree/master
 * https://github.com/mcombeau/push_swap/tree/main 
 * https://github.com/hu8813/push_swap/tree/main
 * https://github.com/42YerevanProjects/push_swap/tree/master
-* https://www.youtube.com/watch?v=4dMsuxfqufg
-* https://oyhoyhk.github.io/
 
 # `Additional`
 
 * LIBFT
+
+### AI Usage
+GitHub Copilot (GPT-5 mini backend) is used for
+* Is used to analyze other's people code sample, comprehend the code logic.
+* Is used to help with debugging where logic errors occured.
+* Discussed about logic, but is not usable enough.
+* Used for finding information about micro-optimization, techniques, coding convention.
+	* Circular stack implementation, what's the best practice to implement.
