@@ -356,6 +356,17 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 ```
+### `Stack`
+To compile the main sorter program
+```
+make all
+```
+For test by Picks a random list of integers in the range -1000..1000 ,with the count taken from `size`.
+```
+make test
+```
+Enter size
+
 # `Resources`
 * Radix sort:
 	* A tutorial on using radix sort with push_swap: [https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
